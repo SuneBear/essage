@@ -1,0 +1,70 @@
+.essage {
+  position: fixed;
+  z-index: 10010;
+  top: -200px;
+  left: 50%;
+  max-width: 600px;
+  line-height: 22px;
+  padding: 23px 20px 20px 53px;
+  margin-left: -150px;
+  background: #fff;
+  border: 1px solid #f7f7f7;
+  border-radius: 2px;
+  font-size: 15px;
+  -webkit-box-shadow: 0 7px 21px rgba(0,0,0,.1);
+  box-shadow: 0 7px 21px rgba(0,0,0,.1);
+  overflow: hidden;
+  -webkit-transition: top 600ms ease;
+  -o-transition: top 600ms ease;
+  transition: top 600ms ease
+}
+
+.essage.is-active {
+  top: 60px;
+  -webkit-transition: top 700ms ease-in-out;
+  -o-transition: top 700ms ease-in-out;
+  transition: top 700ms ease-in-out
+}
+
+.essage .essage-tips {
+  color: #000
+}
+
+.essage .essage-url {
+  color: #03a9f4;
+  -webkit-transition: color 218ms ease;
+  -o-transition: color 218ms ease;
+  transition: color 218ms ease
+}
+
+.essage .essage-url:hover {
+  color: #0286c2
+}
+
+.essage .icon {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  font-size: 24px
+}
+
+.essage.essage-success .icon {
+  color: #259b24
+}
+
+.essage.essage-error .icon {
+  color: #dc584b
+}
+
+.essage.essage-info .icon {
+  color: #03a9f4
+}
+
+.essage.essage-warning .icon {
+  color: #c09853
+}
+
+.essage .close {
+  line-height: 18px;
+  margin-left: 10px
+}
