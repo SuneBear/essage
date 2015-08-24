@@ -38,14 +38,13 @@
     @el.offsetWidth or @el.clientWidth
 
   Essage::_class = (classname, isRemove) ->
-    el = @el
-    if el.classList
-      el.classList[if isRemove then 'remove' else 'add'] classname
+    if @el.classList
+      @el.classList[if isRemove then 'remove' else 'add'] classname
     else
-      defaultclass = el.className
+      defaultclass = @el.className
       reg = new RegExp('\\b' + classname + '\\b', 'g')
-      el.className = if isRemove then defaultclass.replace(reg, '') else if defaultclass.match(reg) then defaultclass else defaultclass + ' ' + classname
-    return el
+      @el.className = if isRemove then defaultclass.replace(reg, '') else if defaultclass.match(reg) then defaultclass else defaultclass + ' ' + classname
+    return @el
 
   Essage::set = (message) ->
     message = if typeof message == 'string' then message: message else message
@@ -58,10 +57,9 @@
     return this
 
   Essage::show = (message, duration = 2000) ->
-    el = @el
     self = @set(message)
     # set message
-    el.innerHTML = @close + @[@config.status] + ' ' + @config.message
+    @el.innerHTML = @close + @[@config.status] + ' ' + @config.message
     marginLeft = -@_width() / 2
     @el.style.marginLeft = parseInt(marginLeft) + 'px'
     # disppear automaticlly
@@ -69,9 +67,7 @@
     clearTimeout @delayHide if @delayHide
     @delayHide = setTimeout ->
       self.hide()
-    , duration
-    @el.addEventListener 'webkitTransitionEnd', @delayHide, false
-    @el.addEventListener 'transitionend', @delayHide, false
+    , duration + 700
     return this
 
   Essage::hide = ->
