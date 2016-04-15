@@ -1,0 +1,56 @@
+.essage
+  position fixed
+  z-index 10010
+  top -200px
+  left 50%
+  max-width 600px
+  line-height 22px
+  padding 23px 20px 20px 53px
+  margin-left -150px
+  background #fff
+  border 1px solid #f7f7f7
+  border-radius 2px
+  font-size 15px
+  box-shadow 0 7px 21px rgba(0,0,0,.1)
+  overflow hidden
+  transition top 600ms ease
+
+  &.is-active
+    top 60px
+    transition top 700ms ease-in-out
+
+  .essage-tips
+    color #000
+
+  .essage-url
+    color #03a9f4
+    transition color 218ms ease
+
+    &:hover
+      color #0286c2
+
+  .icon
+    position absolute
+    top 22px
+    left 20px
+    font-size 24px
+
+  &.essage-success
+    .icon
+      color #259b24
+
+  &.essage-error
+    .icon
+      color #FF3C00
+
+  &.essage-info
+    .icon
+      color #03a9f4
+
+  &.essage-warning
+    .icon
+      color #c09853
+
+  .close
+    line-height 18px
+    margin-left 10px
